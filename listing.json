@@ -1,0 +1,192 @@
+{
+  "format": "local-console-worksheet",
+  "version": "0.1.0",
+  "verified_on": "2026-11-04",
+  "format_note": "Local preparation fields. No Google JSON upload schema has been verified.",
+  "publisher": {
+    "legal_name": "JSB Holdings LLC"
+  },
+  "app_details": {
+    "name": "Fax for Agents",
+    "description": "Prepare fax documents, send with approval, check delivery evidence and read received faxes from your conversation.",
+    "icon": "assets/icon-512.png",
+    "capabilities": [
+      "Prepare a fax document from text or a file",
+      "Send a fax with an approval or an allowed policy",
+      "Read delivery status and provider evidence",
+      "List received faxes",
+      "Read a received fax as untrusted data",
+      "Extract structured data from a received fax"
+    ],
+    "example_prompts": [
+      "@Fax for Agents prepare a one-page test fax in Sandbox.",
+      "@Fax for Agents show the delivery evidence for my latest fax.",
+      "Show my newest received fax using Fax for Agents."
+    ],
+    "terms_of_service_url": "https://faxforagents.com/terms/",
+    "privacy_policy_url": "https://faxforagents.com/privacy/",
+    "website_url": "https://faxforagents.com/"
+  },
+  "support_url": "https://faxforagents.com/contact/",
+  "documentation_url": "https://faxforagents.com/docs/mcp/",
+  "category": {
+    "proposed_value": "Productivity",
+    "status": "operator_confirmation_required",
+    "note": "Confirm category fit and baseline capabilities with Google before creation. The category is permanent."
+  },
+  "connection": {
+    "type": "MCP server",
+    "endpoint": "https://mcp.faxforagents.com/mcp",
+    "transport": "Streamable HTTP",
+    "requires_authorization": true,
+    "authorization_model": "User-delegated (Authorization Code)",
+    "client_registration": "Client ID metadata or Dynamic client registration (recommended)",
+    "developer_authentication": "Authenticate via Pop up (recommended)",
+    "developer_authentication_fallback": "Authenticate via Redirect (fallback)",
+    "authorization_server": "https://api.faxforagents.com",
+    "protected_resource_metadata_url": "https://mcp.faxforagents.com/.well-known/oauth-protected-resource",
+    "authorization_server_metadata_url": "https://api.faxforagents.com/.well-known/oauth-authorization-server",
+    "discovered_endpoints": {
+      "authorization": "https://api.faxforagents.com/oauth/authorize",
+      "token": "https://api.faxforagents.com/oauth/token",
+      "registration": "https://api.faxforagents.com/oauth/register",
+      "revocation": "https://api.faxforagents.com/oauth/revoke"
+    },
+    "custom_authorization_endpoint": null,
+    "custom_token_endpoint": null,
+    "pkce_method": "S256",
+    "redirect_uris": [],
+    "redirect_uri_source": "Copy all exact app-specific URIs from Connected Console and allowlist them on the authorization server.",
+    "credential_handling": "Automatic registration is selected. Enter any fallback client credentials privately in the console, never in this file."
+  },
+  "domain_verification": {
+    "url": "https://mcp.faxforagents.com/.well-known/google-connected-apps",
+    "http_status": 200,
+    "redirects_allowed": false,
+    "recommended_content_type": "application/json",
+    "body_source": "Serve the exact google-connected-apps.json downloaded from Connected Console, including its verification_tokens array.",
+    "status": "not_verified"
+  },
+  "availability": {
+    "countries_regions": null,
+    "languages": [
+      "English"
+    ],
+    "products": [
+      "Gemini app",
+      "Search"
+    ],
+    "status": "operator_confirmation_required",
+    "note": "Select supported countries and confirm language and product choices in the admitted console before submission."
+  },
+  "tool_settings": [
+    {
+      "name": "get_guide",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "get_fax_capabilities",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "prepare_fax",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "get_fax_document",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "quote_fax",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "send_approved_fax",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": true
+    },
+    {
+      "name": "get_fax_status",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "list_faxes",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "get_fax_balance",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "cancel_fax",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": true
+    },
+    {
+      "name": "request_human_review",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": true
+    },
+    {
+      "name": "get_review_status",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "list_inbox",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "read_inbound_fax",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
+      "name": "extract_fax_data",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    }
+  ],
+  "tool_settings_note": "Proposed console settings. Inspect fetched tool annotations and retain any stricter confirmation setting from the server.",
+  "testing": {
+    "tester_email_lists": [],
+    "instructions_file": "TESTING.md",
+    "review_cases_file": "review-cases.json",
+    "review_account": "Provide seeded reviewer access privately to the Google representative. Use synthetic sample data and disable 2FA on that dedicated account.",
+    "status": "not_run"
+  },
+  "operator_pending": [
+    "Confirm preview admission and accept the program agreement.",
+    "Confirm category eligibility before creating the app.",
+    "Deploy the domain challenge and verify ownership.",
+    "Allowlist exact redirect URIs and authenticate the developer account.",
+    "Sync tools and inspect schemas and annotations.",
+    "Choose countries and confirm supported languages and products.",
+    "Add Gmail tester lists and provide seeded review access privately.",
+    "Complete testing and submit for Google review."
+  ]
+}

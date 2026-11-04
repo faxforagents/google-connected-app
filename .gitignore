@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+__pycache__/
+*.pyc
+.coding-agent/
+node_modules/
+.mcp-inspector/
+google-connected-apps.json
+secrets.json
+oauth.json
+*.pem
+*.key
