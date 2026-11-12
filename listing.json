@@ -141,6 +141,18 @@
       "user_confirmation_required": true
     },
     {
+      "name": "request_card_payment",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": true
+    },
+    {
+      "name": "get_card_payment_status",
+      "enabled": true,
+      "additional_context": [],
+      "user_confirmation_required": false
+    },
+    {
       "name": "request_human_review",
       "enabled": true,
       "additional_context": [],

@@ -19,7 +19,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT-1f6feb" alt="MIT licence"></a>
-  <a href="https://faxforagents.com/mcp/"><img src="https://img.shields.io/badge/MCP-15%20tools-6b4fbb" alt="15 MCP tools"></a>
+  <a href="https://faxforagents.com/mcp/"><img src="https://img.shields.io/badge/MCP-17%20tools-6b4fbb" alt="17 MCP tools"></a>
 </p>
 
 Fax for Agents is a fax API, a hosted MCP server and SDKs built so AI agents can send and receive faxes.
@@ -60,7 +60,7 @@ Follow the sourced requirements in [REQUIREMENTS.md](REQUIREMENTS.md) and the [t
    Choose Client ID metadata or Dynamic client registration (recommended).
    Copy the app-specific redirect URIs from the console into the authorization server's allowlist.
 7. Authenticate via Pop up with a developer account. Use Authenticate via Redirect if the popup fails.
-   Select Register client and Sync tools. Confirm all 15 tools appear.
+   Select Register client and Sync tools. Confirm all 17 tools appear.
 8. Configure availability and each tool's confirmation settings from the worksheet. Save and add your authorized Gmail testers.
 9. Run [TESTING.md](TESTING.md). Share seeded reviewer access privately with your Google representative.
    Select Send for review after testing. Select Publish only after Google approves the app.
@@ -148,6 +148,8 @@ Do not commit the downloaded challenge file. The operator must deploy it on the 
 | `list_faxes` | List faxes. |
 | `get_fax_balance` | Read the account balance. |
 | `cancel_fax` | Request fax cancellation. |
+| `request_card_payment` | Ask a person to pay for one quoted fax by card. |
+| `get_card_payment_status` | Read a card payment order. |
 | `request_human_review` | Request human review. |
 | `get_review_status` | Read review status. |
 | `list_inbox` | List received faxes. |
