@@ -50,7 +50,7 @@ MCP_INSPECTOR_SECRET_STORE=memory MCP_INSPECTOR_PERSIST_TOKENS=none \
    Use OAuth and a dedicated Sandbox account. Do not enter a bearer key as a saved header.
 3. Inspect discovery and the OAuth flow. Confirm S256 and exact registered redirect matching.
    Verify CIMD where the client supports it and DCR in a separate session.
-4. Initialize the connection and list tools. Compare all 15 names with `listing.json`.
+4. Initialize the connection and list tools. Compare all 17 names with `listing.json`.
    Inspect server instructions, argument types, required properties, descriptions and safety annotations.
 5. Invoke `get_guide` and `get_fax_capabilities` first. Confirm the account environment is test.
    Run the applicable Sandbox cases in `review-cases.json` and inspect input/output payloads.
@@ -74,7 +74,7 @@ These steps follow Google's [Developer Mode usage guide](https://developers.goog
 4. Read the security and privacy confirmation. Accept it only for the intended service, then select Connect.
 5. Complete the account's authorization flow with Sandbox access.
    In Save your custom app, enter Fax for Agents, verify Available actions and select Connect.
-6. Open Tool Schemas and confirm all 15 tools, their parameters and safety badges.
+6. Open Tool Schemas and confirm all 17 tools, their parameters and safety badges.
    In Authentication, choose Dynamic Client Registration for the DCR test. Select Save and wait for Saved.
 7. Run every listing prompt and all eight review cases in the chat pane.
    Check Event Log for each request, response and error. Use the case expectations as pass criteria.

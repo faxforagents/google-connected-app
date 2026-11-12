@@ -12,8 +12,9 @@ ROOT = Path(__file__).resolve().parent.parent
 TOOLS = {
     'get_guide', 'get_fax_capabilities', 'prepare_fax', 'get_fax_document',
     'quote_fax', 'send_approved_fax', 'get_fax_status', 'list_faxes',
-    'get_fax_balance', 'cancel_fax', 'request_human_review', 'get_review_status',
-    'list_inbox', 'read_inbound_fax', 'extract_fax_data',
+    'get_fax_balance', 'cancel_fax', 'request_card_payment', 'get_card_payment_status',
+    'request_human_review', 'get_review_status', 'list_inbox', 'read_inbound_fax',
+    'extract_fax_data',
 }
 
 
@@ -160,11 +161,11 @@ def main():
     require(availability['products'] == ['Gemini app', 'Search'], 'Unexpected target products')
     require(availability['status'] == 'operator_confirmation_required', 'Availability acceptance is unverified')
     settings = listing['tool_settings']
-    require(len(settings) == 15 and {t['name'] for t in settings} == TOOLS, 'Expected exactly the 15 product tools')
+    require(len(settings) == 17 and {t['name'] for t in settings} == TOOLS, 'Expected exactly the 17 product tools')
     for item in settings:
         require(item['enabled'] is True and item['additional_context'] == [], 'Tools must be enabled without extra context')
         require(type(item['user_confirmation_required']) is bool, 'Confirmation must be boolean')
-        if item['name'] in {'send_approved_fax', 'cancel_fax', 'request_human_review'}:
+        if item['name'] in {'send_approved_fax', 'cancel_fax', 'request_card_payment', 'request_human_review'}:
             require(item['user_confirmation_required'], 'Mutation needs the proposed confirmation setting')
     require(listing['testing']['status'] == 'not_run' and review['execution_status'] == 'not_run', 'Do not claim unexecuted tests passed')
     require(listing['testing']['tester_email_lists'] == [], 'Tester identities belong in the console')
@@ -190,7 +191,7 @@ def main():
         path = (ROOT / filename).resolve()
         require(ROOT in path.parents and path.is_file(), f'Missing or unsafe file: {filename}')
     validate_icon(ROOT / details['icon'])
-    print('PASS: worksheet, 15 tools, eight review cases and 512px PNG validated. Authenticated tests remain unrun.')
+    print('PASS: worksheet, 17 tools, eight review cases and 512px PNG validated. Authenticated tests remain unrun.')
 
 
 if __name__ == '__main__':
